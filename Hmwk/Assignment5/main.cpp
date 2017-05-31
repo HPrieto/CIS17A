@@ -21,24 +21,23 @@ void problem7();
 void problem8();
 
 int main(int argv,char *argc[]) {
-    int inN;
+int inN;
     do {
-      Menu();
-      inN = getN();
-      switch(inN) {
-          case 1:    problem1();break;
-          case 2:    problem2();break;
-          case 3:    problem3();break;
-          case 4:    problem4();break;
-          case 5:    problem5();break;
-          case 6:    problem6();break;
-          case 7:    problem7();break;
-          case 8:    problem8();break;
-          default:   def(inN);}
-      } while (inN<9);
+     Menu();
+     inN=getN();
+     switch(inN) {
+      case 1:    problem1();break;
+      case 2:    problem2();break;
+      case 3:    problem3();break;
+      case 4:    problem4();break;
+      case 5:    problem5();break;
+      case 6:    problem6();break;
+      case 7:    problem7();break;
+      case 8:    problem8();break;
+      default:   def(inN);}
+    } while (inN<9);
     return 1;
 }
-
 void Menu() {
     cout<<"Type 1 for problem 1"<<endl;
     cout<<"Type 2 for problem 2"<<endl;
@@ -464,9 +463,6 @@ void problem5() {
     //Fill weather data with user input
     fillW(forecast,months);
 
-    //Print forecast for entire year
-    printW(forecast,months);
-
     //Free Memory
     delete [] forecast;
 }
@@ -490,6 +486,8 @@ void fillW(WeatherData *w,int n) {
 
         cout<<endl;
     }
+    //Print forecast for entire year
+    printW(w,n);
 }
 
 void printW(WeatherData *w,int months) {

@@ -16,12 +16,9 @@ void problem2();
 void problem3();
 void problem4();
 void problem5();
-void problem6();
-void problem7();
 
 
-int main(int argv,char *argc[])
-{
+int main(int argv,char *argc[]) {
 int inN;
     do{
      Menu();
@@ -32,25 +29,19 @@ int inN;
       case 3:    problem3();break;
       case 4:    problem4();break;
       case 5:    problem5();break;
-      case 6:    problem6();break;
-      case 7:    problem7();break;
       default:   def(inN);}
-    }while(inN<8);
+    }while(inN<6);
     return 1;
 }
-void Menu()
-{
+void Menu() {
        cout<<"Type 1 for problem 1"<<endl;
        cout<<"Type 2 for problem 2"<<endl;
        cout<<"Type 3 for problem 3"<<endl;
        cout<<"Type 4 for problem 4"<<endl;
        cout<<"Type 5 for problem 5"<<endl;
-       cout<<"Type 6 for problem 6"<<endl;
-       cout<<"Type 7 for problem 7"<<endl;
-       cout<<"Type 8 to exit \n"<<endl;
+       cout<<"Type 6 to exit \n"<<endl;
 }
-int getN()
-{
+int getN() {
        int inN;
        cin>>inN;
        return inN;
@@ -73,14 +64,6 @@ void problem4()
 void problem5()
 {
        cout<<"In problem # 5"<<endl<<endl;
-}
-void problem6()
-{
-       cout<<"In problem # 6"<<endl<<endl;
-}
-void problem7()
-{
-cout<<"In problem # 7"<<endl<<endl;
 }
 void def(int inN)
 {

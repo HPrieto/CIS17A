@@ -488,7 +488,7 @@ int *expander(int *a,int n) {
       be copied to element 2 of the new array, and so forth. The function should 
       return a pointer to the new array.
 */
-int *shift(int *,int);
+int *rshift(int *,int);
 void problem9() {
   cout<<"In problem # 9"<<endl<<endl;
 
@@ -502,7 +502,7 @@ void problem9() {
     arr[i] = i + 1;
 
   //Copy and shift
-  shifted = shift(arr,n);
+  shifted = rshift(arr,n);
 
   //Print contents of arrays
   cout<<"Original array:"<<endl;
@@ -515,7 +515,8 @@ void problem9() {
   delete []shifted;
 }
 
-int *shift(int *a,int n) {
+/* Shifts contents of array on place to the right */
+int *rshift(int *a,int n) {
   int *shifted = new int[n + 1];
   for (int i = 0; i < n + 1; i++)
     (i == 0) ? shifted[i] = 0 : shifted[i] = a[i-1];
