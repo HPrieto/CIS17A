@@ -3,15 +3,15 @@
  * Author: Heriberto Prieto
  * Created on April 27, 2017, 5:26 PM
  * Included Concepts:
-    - Line 58: Memory allocation
+    - Line 69: Memory allocation
     - Line 26: Functions with structures, used as input and output
-    - Pointers with arrays and arrays of structures, internally as well as externally.
-    - Use of character arrays as well as string objects.
-    - Reading and wrting to binary files.
+    - Line 22: Pointers with arrays and arrays of structures, internally as well as externally.
+    - Line 68: Use of character arrays as well as string objects.
  */
 
 #include <cstdlib>
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 /* Contains required properties for a game of Connect Four */
@@ -19,7 +19,7 @@ struct ConnectFour {
     int columns;
     int rows;
     int turns;
-    int **board;
+    char **board;
 };
 
 /* Initialize Program Methods */
@@ -67,9 +67,9 @@ int main(int argc,char** argv) {
 /* Allocates memory for 2DArray/Connect Four Game Board */
 void fillBrd(ConnectFour *game) {
 	//Initialize 2DArray
-	game->board = new int*[game->rows];
+	game->board = new char*[game->rows];
 	for (int r = 0; r < game->rows; r++)
-		game->board[r] = new int[game->columns];
+		game->board[r] = new char[game->columns];
     //Set board to all zeros
     rsetBrd(game);
 }
@@ -89,14 +89,15 @@ void prntBrd(ConnectFour *game) {
 void rsetBrd(ConnectFour *game) {
 	for (int r = 0; r < game->rows; r++)
 		for (int c = 0; c < game->columns; c++)
-			game->board[r][c] = 0;
+			game->board[r][c] = ' ';
 }
 
 /* Places value at given column, lowest value row without value */
 void dropChp(ConnectFour *game,int place,int player) {
 	for (int r = game->rows - 1; r >= 0; r--)
-        if (game->board[r][place - 1] == 0) {
-            game->board[r][place - 1] = player;
+        if (game->board[r][place - 1] == ' ') {
+            (player == 1) ? game->board[r][place - 1] = 'X':
+                            game->board[r][place - 1] = '0';
             break;
         }
 }
@@ -105,32 +106,37 @@ void dropChp(ConnectFour *game,int place,int player) {
 int gameWon(ConnectFour *game) {
     for (int r = 0; r < game->rows; r++)
         for (int c = 0; c < game->columns; c++)
-            if (game->board[r][c] != 0) {
+            if (game->board[r][c] != ' ') {
                 //Bottom Half Vertical Win
                 if (r > 2)
                 if (game->board[r][c] == game->board[r - 1][c]) 
                 if (game->board[r - 1][c] == game->board[r - 2][c]) 
-                if (game->board[r - 2][c] == game->board[r - 3][c])return game->board[r][c];
+                if (game->board[r - 2][c] == game->board[r - 3][c])
+                return game->board[r][c];
                 //Top Half Vertical Win
                 if (r < 3)
                 if (game->board[r][c] == game->board[r + 1][c]) 
                 if (game->board[r + 1][c] == game->board[r + 2][c]) 
-                if (game->board[r + 2][c] == game->board[r + 3][c])return game->board[r][c];
+                if (game->board[r + 2][c] == game->board[r + 3][c])
+                return game->board[r][c];
                 //Reverse Diagonal Win
                 if (r < 3 && c < 4)
                 if (game->board[r][c] == game->board[r + 1][c + 1]) 
                 if (game->board[r + 1][c + 1] == game->board[r + 2][c + 2]) 
-                if (game->board[r + 2][c + 2] == game->board[r + 3][c + 3])return game->board[r][c];
+                if (game->board[r + 2][c + 2] == game->board[r + 3][c + 3])
+                return game->board[r][c];
                 //Diagonal Win
                 if (r < 3 && c < 4)
                 if (game->board[r][c] == game->board[r + 1][c - 1]) 
                 if (game->board[r + 1][c - 1] == game->board[r + 2][c - 2]) 
-                if (game->board[r + 2][c - 2] == game->board[r + 3][c - 3])return game->board[r][c];
+                if (game->board[r + 2][c - 2] == game->board[r + 3][c - 3])
+                return game->board[r][c];
                 //Horizontal Win
                 if (c < 4)
                 if (game->board[r][c] == game->board[r][c + 1]) 
                 if (game->board[r][c + 1] == game->board[r][c + 2]) 
-                if (game->board[r][c + 2] == game->board[r][c + 3])return game->board[r][c];
+                if (game->board[r][c + 2] == game->board[r][c + 3])
+                return game->board[r][c];
             }
     return 0;
 }

@@ -83,7 +83,7 @@ class Date {
 
         //Set Year
         void setYear(int y)
-          { this->year = year; }
+          { this->year = y; }
 
         //Prints date format: 00 / 00 / 0000
         void printDate1() 
@@ -336,10 +336,10 @@ void problem2() {
 }
 
 void prntE(Employee e) {
-    cout<<"Name:       "<<e.getName();
-    cout<<"ID Number:  "<<e.getID();
-    cout<<"Department: "<<e.getDepartment();
-    cout<<"Position:   "<<e.getPosition();
+    cout<<"Name:       "<<e.getName()<<endl;
+    cout<<"ID Number:  "<<e.getID()<<endl;
+    cout<<"Department: "<<e.getDepartment()<<endl;
+    cout<<"Position:   "<<e.getPosition()<<endl;
     cout<<endl;
 }
 
