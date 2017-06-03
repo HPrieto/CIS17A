@@ -482,7 +482,7 @@ void prntInfo(PersonalInformation p) {
 }
 
 /*
-    11.5 RetailItem Class
+    13.5 RetailItem Class
       - Write a class named RetailItem that holds data about an item in a 
         retail store. The class should have the following member variables:
           • description. A string that holds a brief description of the item.

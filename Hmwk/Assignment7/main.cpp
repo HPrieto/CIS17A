@@ -429,11 +429,11 @@ void problem5() {
   int nDeaths    = 2600000;
   Population pop = Population(population,nBirths,nDeaths);
   cout<<"US Population Stats:"<<endl;
-  cout<<"Population:       "<<population<<endl;
-  cout<<"Number of Births: "<<nBirths<<endl;
-  cout<<"Number of Deaths: "<<nDeaths<<endl;
-  cout<<"Birth Rate:       "<<pop.getBirthRate()<<endl;
-  cout<<"Death Rate:       "<<pop.getDeathRate()<<endl<<endl;
+  cout<<"Population:         "<<population<<endl;
+  cout<<"Number of Births:   "<<nBirths<<endl;
+  cout<<"Number of Deaths:   "<<nDeaths<<endl;
+  cout<<"Birth Rate:         "<<pop.getBirthRate()<<endl;
+  cout<<"Death Rate:         "<<pop.getDeathRate()<<endl<<endl;
 }
 void def(int inN) {
        cout<<"You typed "<<inN<<" to exit the program"<<endl;
