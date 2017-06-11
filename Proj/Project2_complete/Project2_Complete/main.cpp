@@ -153,7 +153,7 @@ ConnectFour::ConnectFour() {
 
 /* Places value at given column, lowest value row without value */
 void ConnectFour::dropChp(int place,int player) {
-    char x = 'X',o = 'A';
+    char x = 'X',o = 'O';
     for (int r = this->getRows() - 1; r >= 0; r--)
         if (this->getValue(r,place - 1) == ' ') {
             (player == 1) ? this->setValue(x,r,place - 1):
@@ -178,7 +178,7 @@ void ConnectFour::prntBrd() {
 int ConnectFour::gameWon() {
     for (int r = 0; r < this->getRows(); r++)
         for (int c = 0; c < this->getColumns(); c++)
-            if (this->getValue(r,c) == 'A' || this->getValue(r,c) == 'X') {
+            if (this->getValue(r,c) == 'O' || this->getValue(r,c) == 'X') {
                 //Bottom Half Vertical Win
                 if (r > 2)
                 if (this->getValue(r,c)     == this->getValue(r - 1,c)) 
