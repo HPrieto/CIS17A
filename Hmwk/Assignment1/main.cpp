@@ -1,5 +1,5 @@
 //Mark E. Lehr
-//October 27th, 2011
+//August 28, 2017
 //Menu to be used for the midterm
 //homework and midterm, etc....
 
@@ -49,7 +49,7 @@ int getN() {
        return inN;
 }
 void problem1() {
-  cout<<"In problem # 1"<<endl<<endl;
+  cout<<"In problem: 3.12"<<endl<<endl;
 
   //Declare problem variables
   int divSales = rand()%900+100;
@@ -57,7 +57,6 @@ void problem1() {
   int decimal  = divSales%100;
 
   //Output result to user
-  cout<<"In problem #3.12"<<endl<<endl;
   cout<<setw(8)<<whole<<"."<<decimal<<endl;
 }
 
@@ -65,7 +64,7 @@ void problem1() {
  * Write a cout statement so the variable totalAge is displayed in a field of 12 spaces,
  * in fixed point notation, with a precision of 4 decimal places. */
 void problem2() {
-  cout<<"In problem # 2"<<endl<<endl;
+  cout<<"In problem: 3.13"<<endl<<endl;
 
   //Declare problem variables
   int totalAge = rand()%9000+1000;
@@ -73,7 +72,6 @@ void problem2() {
   int decimal  = totalAge%10000;
 
   //Output result to user
-  cout<<"In problem #3.13"<<endl<<endl;
   cout<<setw(12)<<whole<<"."<<decimal<<endl;  
 }
 
@@ -89,13 +87,12 @@ void problem2() {
  *     4. For example, 2008 is a leap year but 2009 is not.
  *  */
 void problem3() {
-  cout<<"In problem # 3"<<endl<<endl;
+  cout<<"In problem 4.10"<<endl<<endl;
   //Declare problem variables
   int month;
   int year;
 
   //User output/input
-  cout<<"In problem # 3"<<endl<<endl;
   cout<<"Enter any month:"<<endl;
   cin>>month;
   cout<<"Enter any year:"<<endl;
@@ -176,7 +173,7 @@ void daysInMonth(int month,int year) {
   Input validation: Make sure the number of units is greater than 0.
 */
 void problem4() {
-  cout<<"In problem # 4"<<endl<<endl;
+  cout<<"In problem: 4.12"<<endl<<endl;
 
   //Declare method variables
   int cost = 99;
@@ -185,8 +182,7 @@ void problem4() {
 
   //User output/input
   cout<<"Assignment 4.12"<<endl;
-  cout<<"Input the number of units you wish to purchase and "<<endl;
-  cout<<"your total cost for this purchase:"<<endl;
+  cout<<"Input the number of units you wish to purchase:"<<endl;
   cin>>units;
 
   //Perform problem logic

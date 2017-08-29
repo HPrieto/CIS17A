@@ -1,7 +1,8 @@
 /*
   Heriberto Prieto
+  August 28th, 2017
   Assignment 2
-  Chapters 4-8 
+  Chapters 4-8
   5.11, 6.7, 7.6, 8.7 and 1 other problem
 */
 
@@ -190,7 +191,7 @@ void problem4() {
   //Output/Input to user
   cout<<"Valid charge account numbers:"<<endl;
   cout<<"5658845 4520125 7895122 8777541 8451277 1302850 8080152 4562555 5552012"<<endl; 
-  cout<<"5050552 7825877 1250255 1005231 6545231 3852085 7576651 7881200 4581002"<<endl;
+  cout<<"5050552 7825877 1250255 1005231 6545231 3852085 7576651 7881200 4581002\n"<<endl;
   cout<<"Enter a valid charge account number: "<<endl;
   cin>>acc;
   if (linSrch(a,n,acc))
@@ -242,14 +243,17 @@ void problem5() {
   winners(a,n);
 
   //Output/Input to user
-  cout<<"Enter your chosen combination:"<<endl;
+  cout<<"Enter your lottery ticket combination(5-digit combination):"<<endl;
   cin>>c;
 
   //Check for winning number
   if (jackpot(a,n,c))
     cout<<"You won the lottery!"<<endl;
   else
-    cout<<"Try again!"<<endl;
+    cout<<"You did not win the lottery!"<<endl;
+
+  // Free Memory
+  delete [] a;
 }
 
 /* Fills array with winning numbers */

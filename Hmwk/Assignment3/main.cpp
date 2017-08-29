@@ -180,6 +180,7 @@ void problem2() {
     cout<<"$"<<a[i]<<" ";
   cout<<endl;
 
+  // Free Memory
   delete []a;
 }
 
@@ -222,6 +223,7 @@ void problem3() {
     cout<<"$"<<a[i]<<" ";
   cout<<endl;
 
+  // Free Memory
   delete []a;
 }
 
@@ -288,6 +290,7 @@ void problem4() {
     cout<<"$"<<v[i]<<" ";
   cout<<endl;
 
+  // Free Memory
   delete []v;
   delete []a;
 }
