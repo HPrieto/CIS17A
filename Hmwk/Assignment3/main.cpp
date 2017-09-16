@@ -1,5 +1,6 @@
 /*
   Heriberto Prieto
+  August 28, 2017
   Assignment 3
   Chapter 9 
   9.2, 9.6, 9.7 and 7 other problems

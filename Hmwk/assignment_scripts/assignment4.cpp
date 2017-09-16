@@ -9,6 +9,7 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <ctype.h>
 using namespace std;
 
 void Menu();
@@ -100,11 +101,70 @@ int nwords(char *c,int n) {
     - The program performs the operation selected by the user and 
       repeats until the user selects E to exit the program.
 */
+
+string createS();
+short nVowels(string);
+short nCnsnts(string);
+bool isVowel(char);
+bool isCnsnt(char);
+
 void problem2() {
   cout<<"In problem # 2"<<endl<<endl;
 
   //Declare problem variables
+  string s = createS();
+  short  v = nVowels(s);
+  short  c = nCnsnts(s);
 
+  // Output to user
+  cout<<"Sentence:   "<<s<<endl;
+  cout<<"Vowels:     "<<v<<endl;
+  cout<<"Consonants: "<<c<<endl;
+}
+
+/* Reads in and returns line entered by user */
+string createS() {
+  string s;
+  cout<<"Enter a sentence to find the number of vowels and consonants:"<<endl;
+  cin.ignore();
+  getline(cin, s);
+  return s;
+}
+
+/* Returns number of vowels in string */
+short nVowels(string s) {
+  short vowels = 0;
+  for (int i = 0; i < s.size(); i++)
+    if (isVowel(s.at(i)) == true)
+      vowels++;
+  return vowels;
+}
+
+/* Returns number of consonants in string */
+short nCnsnts(string s) {
+  short cnsnts = 0;
+  for (int i = 0; i < s.size(); i++)
+    if (isCnsnt(s.at(i)) == true)
+      cnsnts++;
+  return cnsnts;
+}
+
+/* Returns True if character is a vowel */
+bool isVowel(char c) {
+  char vowels[] = "aeiou";
+  for (int i = 0; i < sizeof(vowels); i++)
+    if (vowels[i] == tolower(c))
+      return true;
+  return false;
+}
+
+/* Returns True if character is a consonant */
+bool isCnsnt(char c) {
+  char cnsnts[] = "bcdfghjklmnpqrstvwxyz";
+  for (int i = 0; i < sizeof(cnsnts); i++)
+    if (cnsnts[i] == tolower(c))
+      return true;
+  return false;
 }
 
 /*
@@ -119,8 +179,26 @@ void problem2() {
       in the fourth array. Display the contents of the fourth array on 
       the screen.
 */
+
+char getFirst();
+string getMiddle();
+string getLast();
+
 void problem3() {
-       cout<<"In problem # 3"<<endl<<endl;
+    cout<<"In problem # 3"<<endl<<endl;
+
+    // Declare variables
+    char *firstN = getFirst();
+
+    //Output to user
+    cout<<"First Name: "<<firstN<<endl;
+}
+
+char getFirst() {
+  string s;
+  cin.ignore();
+  getline(cin, s);
+  return static_cast<char>(s);
 }
 
 /*
